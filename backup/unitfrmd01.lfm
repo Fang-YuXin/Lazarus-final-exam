@@ -1,0 +1,279 @@
+object FrmD01: TFrmD01
+  Left = -9
+  Height = 991
+  Top = -9
+  Width = 1920
+  Caption = '訂單處理(D01)'
+  ClientHeight = 991
+  ClientWidth = 1920
+  Color = 15197131
+  DesignTimePPI = 120
+  FormStyle = fsMDIChild
+  OnClose = FormClose
+  LCLVersion = '2.2.4.0'
+  WindowState = wsMaximized
+  object Label1: TLabel
+    Left = 108
+    Height = 19
+    Top = 66
+    Width = 60
+    Caption = '顧客名稱'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 108
+    Height = 19
+    Top = 128
+    Width = 60
+    Caption = '商品名稱'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 108
+    Height = 19
+    Top = 192
+    Width = 60
+    Caption = '訂購數量'
+    ParentColor = False
+  end
+  object Label4: TLabel
+    Left = 108
+    Height = 19
+    Top = 256
+    Width = 30
+    Caption = '售價'
+    ParentColor = False
+  end
+  object Label5: TLabel
+    Left = 108
+    Height = 19
+    Top = 320
+    Width = 60
+    Caption = '繳費狀態'
+    ParentColor = False
+  end
+  object Label6: TLabel
+    Left = 424
+    Height = 19
+    Top = 66
+    Width = 60
+    Caption = '訂購日期'
+    ParentColor = False
+  end
+  object Label7: TLabel
+    Left = 424
+    Height = 19
+    Top = 192
+    Width = 30
+    Caption = '庫存'
+    ParentColor = False
+  end
+  object Label8: TLabel
+    Left = 424
+    Height = 19
+    Top = 256
+    Width = 60
+    Caption = '送貨方式'
+    ParentColor = False
+  end
+  object CustomerName: TDBLookupComboBox
+    Left = 184
+    Height = 27
+    Top = 58
+    Width = 176
+    DataField = '顧客名稱'
+    DataSource = Frm000.DataSourceCustomerLookUp
+    KeyField = '顧客編號'
+    ListField = '顧客名稱'
+    ListFieldIndex = 0
+    ListSource = Frm000.DataSourceCustomerLookUp
+    LookupCache = False
+    TabOrder = 0
+  end
+  object Sdate: TEdit
+    Left = 496
+    Height = 27
+    Top = 58
+    Width = 176
+    TabOrder = 1
+  end
+  object ProductName: TDBLookupComboBox
+    Left = 184
+    Height = 27
+    Top = 120
+    Width = 488
+    DataField = '商品名稱'
+    DataSource = Frm000.DataSourceProductLookUp
+    KeyField = '商品編號'
+    ListField = '商品名稱'
+    ListFieldIndex = 0
+    ListSource = Frm000.DataSourceProductLookUp
+    LookupCache = False
+    OnChange = ProductNameChange
+    TabOrder = 2
+  end
+  object Snum_1: TEdit
+    Left = 184
+    Height = 27
+    Top = 184
+    Width = 176
+    TabOrder = 3
+  end
+  object Pnum: TEdit
+    Left = 496
+    Height = 27
+    Top = 184
+    Width = 176
+    TabOrder = 4
+  end
+  object SalePrice: TEdit
+    Left = 184
+    Height = 27
+    Top = 248
+    Width = 176
+    TabOrder = 5
+  end
+  object Delivery: TDBLookupComboBox
+    Left = 496
+    Height = 27
+    Top = 248
+    Width = 176
+    DataField = '送貨方式'
+    DataSource = Frm000.DataSourceDeliveryLookUp
+    KeyField = '送貨方式'
+    ListField = '送貨方式'
+    ListFieldIndex = 0
+    ListSource = Frm000.DataSourceDeliveryLookUp
+    LookupCache = False
+    TabOrder = 6
+  end
+  object Sstatu: TDBLookupComboBox
+    Left = 184
+    Height = 27
+    Top = 312
+    Width = 176
+    DataField = '繳費狀態'
+    DataSource = Frm000.DataSourceSstatueLookUp
+    KeyField = '繳費狀態'
+    ListField = '繳費狀態'
+    ListFieldIndex = 0
+    ListSource = Frm000.DataSourceSstatueLookUp
+    LookupCache = False
+    TabOrder = 7
+  end
+  object DBGridOrder: TDBGrid
+    Left = 104
+    Height = 472
+    Top = 408
+    Width = 576
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = '訂單編號'
+        Width = 100
+        FieldName = '訂單編號'
+      end    
+      item
+        Title.Caption = '訂購日期'
+        Width = 120
+        FieldName = '訂購日期'
+      end    
+      item
+        Title.Caption = '總金額'
+        Width = 75
+        FieldName = '總金額'
+      end    
+      item
+        Title.Caption = '訂單狀態'
+        Width = 80
+        FieldName = '訂單狀態'
+      end    
+      item
+        Title.Caption = '繳費狀態'
+        Width = 85
+        FieldName = '繳費狀態'
+      end    
+      item
+        Title.Caption = '送貨方式'
+        Width = 75
+        FieldName = '送貨方式'
+      end>
+    DataSource = Frm000.DataSourceOrder
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    TabOrder = 8
+    OnCellClick = DBGridOrderCellClick
+  end
+  object DBGridOrder1: TDBGrid
+    Left = 792
+    Height = 472
+    Top = 408
+    Width = 664
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = '訂單編號'
+        Width = 100
+        FieldName = '訂單編號'
+      end    
+      item
+        Title.Caption = '訂購日期'
+        Width = 120
+        FieldName = '訂購日期'
+      end    
+      item
+        Title.Caption = '顧客編號'
+        Width = 100
+        FieldName = '顧客編號'
+      end    
+      item
+        Title.Caption = '商品編號'
+        Width = 100
+        FieldName = '商品編號'
+      end    
+      item
+        Title.Caption = '數量'
+        Width = 55
+        FieldName = '數量'
+      end    
+      item
+        Title.Caption = '售價'
+        Width = 75
+        FieldName = '售價'
+      end    
+      item
+        Title.Caption = '總價'
+        Width = 75
+        FieldName = '總價'
+      end>
+    DataSource = Frm000.DataSourceOrderDetails
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    TabOrder = 9
+  end
+  object Button1: TButton
+    Left = 792
+    Height = 31
+    Top = 112
+    Width = 126
+    Caption = '新增訂貨單'
+    OnClick = Button1Click
+    TabOrder = 10
+  end
+  object ButtonDelivery: TButton
+    Left = 792
+    Height = 31
+    Top = 192
+    Width = 126
+    Caption = '修改送貨方式'
+    OnClick = ButtonDeliveryClick
+    TabOrder = 11
+  end
+  object ButtonSstatu: TButton
+    Left = 792
+    Height = 31
+    Top = 272
+    Width = 126
+    Caption = '修改繳費狀態'
+    OnClick = ButtonSstatuClick
+    TabOrder = 12
+  end
+end

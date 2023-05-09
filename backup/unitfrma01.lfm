@@ -1,0 +1,62 @@
+object FrmA01: TFrmA01
+  Left = 961
+  Height = 466
+  Top = 275
+  Width = 766
+  Caption = '登入(A01)'
+  ClientHeight = 466
+  ClientWidth = 766
+  Color = 15197131
+  DesignTimePPI = 120
+  OnActivate = FormActivate
+  OnClose = FormClose
+  LCLVersion = '2.2.4.0'
+  object txtUsername: TLabeledEdit
+    Left = 248
+    Height = 27
+    Top = 192
+    Width = 272
+    EditLabel.Height = 19
+    EditLabel.Width = 272
+    EditLabel.Caption = '用戶名'
+    EditLabel.ParentColor = False
+    TabOrder = 0
+  end
+  object txtPassword: TLabeledEdit
+    Left = 248
+    Height = 27
+    Top = 280
+    Width = 272
+    EchoMode = emPassword
+    EditLabel.Height = 19
+    EditLabel.Width = 272
+    EditLabel.Caption = '密碼'
+    EditLabel.ParentColor = False
+    PasswordChar = '*'
+    TabOrder = 1
+  end
+  object btnLogin: TButton
+    Left = 344
+    Height = 31
+    Top = 344
+    Width = 94
+    Caption = '登錄'
+    OnClick = btnLoginClick
+    TabOrder = 2
+  end
+  object StaticText1: TStaticText
+    Left = 160
+    Height = 69
+    Top = 64
+    Width = 480
+    Caption = '白沙網路書城系統'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -60
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 3
+  end
+end

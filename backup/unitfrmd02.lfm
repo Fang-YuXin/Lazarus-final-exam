@@ -1,0 +1,248 @@
+object FrmD02: TFrmD02
+  Left = 688
+  Height = 566
+  Top = 208
+  Width = 1554
+  Caption = '銷退處裡(D02)'
+  ClientHeight = 566
+  ClientWidth = 1554
+  Color = 15197131
+  DesignTimePPI = 120
+  FormStyle = fsMDIChild
+  OnClose = FormClose
+  PopupMode = pmExplicit
+  PopupParent = Frm000.Owner
+  LCLVersion = '2.2.4.0'
+  WindowState = wsMaximized
+  object ButAppend: TButton
+    Left = 1221
+    Height = 32
+    Top = 80
+    Width = 94
+    Caption = '新增'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = ButAppendClick
+    ParentFont = False
+    TabOrder = 0
+  end
+  object ButDelete: TButton
+    Left = 1221
+    Height = 32
+    Top = 130
+    Width = 94
+    Caption = '刪除'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = ButDeleteClick
+    ParentFont = False
+    TabOrder = 1
+  end
+  object ButUpdate: TButton
+    Left = 1220
+    Height = 32
+    Top = 177
+    Width = 94
+    Caption = '修改'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = ButUpdateClick
+    ParentFont = False
+    TabOrder = 2
+  end
+  object Label1: TLabel
+    Left = 295
+    Height = 23
+    Top = 81
+    Width = 72
+    Caption = '顧客名稱'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 293
+    Height = 23
+    Top = 133
+    Width = 72
+    Caption = '商品名稱'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 295
+    Height = 23
+    Top = 187
+    Width = 72
+    Caption = '商品編號'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 587
+    Height = 23
+    Top = 80
+    Width = 36
+    Caption = '數量'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 587
+    Height = 23
+    Top = 133
+    Width = 36
+    Caption = '售價'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label6: TLabel
+    Left = 587
+    Height = 23
+    Top = 187
+    Width = 54
+    Caption = '總金額'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object EditCName: TEdit
+    Left = 407
+    Height = 31
+    Top = 81
+    Width = 100
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 3
+  end
+  object EditPName: TEdit
+    Left = 407
+    Height = 31
+    Top = 129
+    Width = 100
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 4
+  end
+  object EditPID: TEdit
+    Left = 407
+    Height = 31
+    Top = 180
+    Width = 100
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 5
+  end
+  object EditNum: TEdit
+    Left = 673
+    Height = 31
+    Top = 81
+    Width = 100
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 6
+  end
+  object EditPrice: TEdit
+    Left = 673
+    Height = 31
+    Top = 129
+    Width = 100
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 7
+  end
+  object EditTotalPrice: TEdit
+    Left = 673
+    Height = 31
+    Top = 187
+    Width = 100
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 8
+  end
+  object DBGrid1: TDBGrid
+    Left = 248
+    Height = 256
+    Top = 256
+    Width = 688
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = '顧客名稱'
+        FieldName = '顧客名稱'
+      end    
+      item
+        Title.Caption = '商品名稱'
+        FieldName = '商品名稱'
+      end    
+      item
+        Title.Caption = '商品編號'
+        FieldName = '商品編號'
+      end    
+      item
+        Title.Caption = '數量'
+        Width = 60
+        FieldName = '數量'
+      end    
+      item
+        Title.Caption = '售價'
+        Width = 75
+        FieldName = '售價'
+      end    
+      item
+        Title.Caption = '總金額'
+        Width = 75
+        FieldName = '總金額'
+      end>
+    DataSource = Frm000.DataSourceD02
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    TabOrder = 9
+    OnCellClick = DBGrid1CellClick
+  end
+end

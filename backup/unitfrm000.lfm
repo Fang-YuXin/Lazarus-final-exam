@@ -1,0 +1,1414 @@
+object Frm000: TFrm000
+  Left = -8
+  Height = 959
+  Top = 6
+  Width = 1918
+  Caption = '網路書城系統'
+  Color = 13684923
+  DesignTimePPI = 120
+  FormStyle = fsMDIForm
+  Menu = MainMenu1
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  ParentBiDiMode = False
+  ParentFont = True
+  LCLVersion = '2.2.4.0'
+  WindowState = wsMaximized
+  object MainMenu1: TMainMenu
+    Left = 768
+    Top = 16
+    object A0: TMenuItem
+      Caption = '系統(A)'
+      object A01: TMenuItem
+        Caption = '登入(A01)'
+        OnClick = A01Click
+      end
+      object A02: TMenuItem
+        Caption = '登出(A02)'
+        OnClick = A02Click
+      end
+    end
+    object B0: TMenuItem
+      Caption = '顧客管理(B)'
+      Enabled = False
+      object B01: TMenuItem
+        Caption = '顧客資料查詢(B01)'
+        OnClick = B01Click
+      end
+      object B02: TMenuItem
+        Caption = '顧客資料修改(B02)'
+        OnClick = B02Click
+      end
+    end
+    object C0: TMenuItem
+      Caption = '商品管理(C)'
+      Enabled = False
+      object C01: TMenuItem
+        Caption = '商品資料查詢(C01)'
+        OnClick = C01Click
+      end
+      object C02: TMenuItem
+        Caption = '商品資料修改(C02)'
+        OnClick = C02Click
+      end
+    end
+    object D0: TMenuItem
+      Caption = '銷售管理(D)'
+      Enabled = False
+      object D01: TMenuItem
+        Caption = '訂單處理(D01)'
+        OnClick = D01Click
+      end
+      object D02: TMenuItem
+        Caption = '銷退處理(D02)'
+        OnClick = D02Click
+      end
+    end
+    object E0: TMenuItem
+      Caption = '採購管理(E)'
+      Enabled = False
+      object E01: TMenuItem
+        Caption = '商品採購(E01)'
+        OnClick = E01Click
+      end
+      object E02: TMenuItem
+        Caption = '應付帳款管理(E02)'
+        OnClick = E02Click
+      end
+    end
+    object F0: TMenuItem
+      Caption = '員工管理(F)'
+      Enabled = False
+      object F01: TMenuItem
+        Caption = '員工資料查詢(F01)'
+        OnClick = F01Click
+      end
+      object F02: TMenuItem
+        Caption = '員工資料修改(F02)'
+        OnClick = F02Click
+      end
+    end
+  end
+  object SQLTransactionEmployee: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionEmployee
+    Left = 248
+    Top = 768
+  end
+  object MSSQLConnectionEmployee: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'BookStore'
+    KeepConnection = True
+    Password = 'erp2012'
+    Transaction = SQLTransactionEmployee
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-C5U8POT\SQLEXPRESS'
+    Left = 104
+    Top = 768
+  end
+  object SQLQueryEmployee: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '員工編號'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = '員工名稱'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = '生日'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '員工部門'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = '職位'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = '電話'
+        DataType = ftString
+        Precision = -1
+        Size = 10
+      end    
+      item
+        Name = 'Email'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = '就職狀況'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end>
+    Active = True
+    Database = MSSQLConnectionEmployee
+    Transaction = SQLTransactionEmployee
+    SQL.Strings = (
+      ' SELECT * FROM 員工資料'
+      ''
+    )
+    Params = <>
+    Macros = <>
+    Left = 376
+    Top = 768
+  end
+  object DataSourceEmployee: TDataSource
+    DataSet = SQLQueryEmployee
+    Left = 504
+    Top = 768
+  end
+  object MSSQLConnection1: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'BookStore'
+    KeepConnection = True
+    Password = 'erp2012'
+    Transaction = SQLTransaction1
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-C5U8POT\SQLEXPRESS'
+    Left = 104
+    Top = 832
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = True
+    Database = MSSQLConnection1
+    Left = 248
+    Top = 832
+  end
+  object SQLQuery1: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '員工編號'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = '員工名稱'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = '生日'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '員工部門'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = '職位'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = '電話'
+        DataType = ftString
+        Precision = -1
+        Size = 10
+      end    
+      item
+        Name = 'Email'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = '就職狀況'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end>
+    Active = True
+    Database = MSSQLConnection1
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select * from 員工資料'
+    )
+    Params = <>
+    Macros = <>
+    Left = 376
+    Top = 832
+  end
+  object DataSourceProduct: TDataSource
+    DataSet = SQLQueryProduct
+    Left = 496
+    Top = 528
+  end
+  object SQLTransactionProduct: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionProduct
+    Left = 248
+    Top = 525
+  end
+  object SQLQueryProduct: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '商品編號'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = '商品名稱'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = '商品敘述'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '作者名稱'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = '庫存'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = '售價'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = '出版商'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end>
+    Active = True
+    Database = MSSQLConnectionProduct
+    Transaction = SQLTransactionProduct
+    SQL.Strings = (
+      'SELECT * FROM 商品資料 order by 商品編號'
+    )
+    Params = <>
+    Macros = <>
+    Left = 376
+    Top = 525
+  end
+  object MSSQLConnectionProduct: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'BookStore'
+    KeepConnection = True
+    Password = 'erp2012'
+    Transaction = SQLTransactionProduct
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-C5U8POT\SQLEXPRESS'
+    Left = 104
+    Top = 525
+  end
+  object MSSQLConnectionD022: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'BookStore'
+    KeepConnection = True
+    Password = 'erp2012'
+    Transaction = SQLTransactionD022
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-C5U8POT\SQLEXPRESS'
+    Left = 104
+    Top = 672
+  end
+  object SQLTransactionD022: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionD022
+    Left = 248
+    Top = 672
+  end
+  object SQLQueryD022: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '顧客名稱'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = '商品名稱'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = '商品編號'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = '數量'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = '售價'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = '總金額'
+        DataType = ftInteger
+        Precision = -1
+      end>
+    Active = True
+    Database = MSSQLConnectionD022
+    Transaction = SQLTransactionD022
+    SQL.Strings = (
+      'select * from 退貨記錄'
+    )
+    Params = <>
+    Macros = <>
+    Left = 376
+    Top = 672
+  end
+  object DataSourceD02: TDataSource
+    DataSet = SQLQueryD02
+    Left = 504
+    Top = 608
+  end
+  object SQLQueryD02: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '顧客名稱'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = '商品名稱'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = '商品編號'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = '數量'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = '售價'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = '總金額'
+        DataType = ftInteger
+        Precision = -1
+      end>
+    Active = True
+    Database = MSSQLConnectionD02
+    Transaction = SQLTransactionD02
+    SQL.Strings = (
+      'SELECT * FROM 退貨記錄'
+    )
+    Params = <>
+    Macros = <>
+    Left = 376
+    Top = 608
+  end
+  object SQLTransactionD02: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionD02
+    Left = 248
+    Top = 608
+  end
+  object MSSQLConnectionD02: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'BookStore'
+    KeepConnection = True
+    Password = 'erp2012'
+    Transaction = SQLTransactionD02
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-C5U8POT\SQLEXPRESS'
+    Left = 104
+    Top = 608
+  end
+  object DataSourceC01: TDataSource
+    DataSet = SQLQueryC01
+    Left = 496
+    Top = 464
+  end
+  object SQLQueryC01: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '商品編號'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = '商品名稱'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = '商品敘述'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '作者名稱'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = '庫存'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = '售價'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = '出版商'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end>
+    Active = True
+    Database = MSSQLConnectionC01
+    Transaction = SQLTransactionC01
+    SQL.Strings = (
+      'select * from 商品資料 order by 商品編號'
+      ''
+    )
+    Params = <>
+    Macros = <>
+    Left = 376
+    Top = 464
+  end
+  object MSSQLConnectionC01: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'BookStore'
+    KeepConnection = True
+    Password = 'erp2012'
+    Transaction = SQLTransactionC01
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-C5U8POT\SQLEXPRESS'
+    Left = 104
+    Top = 464
+  end
+  object SQLTransactionC01: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionC01
+    Left = 248
+    Top = 464
+  end
+  object MSSQLConnectionOrder: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'BookStore'
+    KeepConnection = False
+    Password = 'erp2012'
+    Transaction = SQLTransactionOrder
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-C5U8POT\SQLEXPRESS'
+    Left = 1144
+    Top = 64
+  end
+  object SQLTransactionOrder: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionOrder
+    Left = 1312
+    Top = 64
+  end
+  object SQLQueryOrder: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '訂單編號'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = '訂購日期'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '總金額'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = '訂單狀態'
+        DataType = ftString
+        Precision = -1
+        Size = 5
+      end    
+      item
+        Name = '繳費狀態'
+        DataType = ftString
+        Precision = -1
+        Size = 5
+      end    
+      item
+        Name = '送貨方式'
+        DataType = ftString
+        Precision = -1
+        Size = 5
+      end>
+    Active = True
+    Database = MSSQLConnectionOrder
+    Transaction = SQLTransactionOrder
+    SQL.Strings = (
+      'select * from 訂單管理 ORDER BY 訂單編號 DESC'
+      ''
+    )
+    Params = <>
+    Macros = <>
+    Left = 1512
+    Top = 64
+  end
+  object DataSourceOrder: TDataSource
+    DataSet = SQLQueryOrder
+    Left = 1664
+    Top = 64
+  end
+  object MSSQLConnectionOrderDetails: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'BookStore'
+    KeepConnection = False
+    Password = 'erp2012'
+    Transaction = SQLTransactionOrderDetails
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-C5U8POT\SQLEXPRESS'
+    Left = 1144
+    Top = 160
+  end
+  object SQLTransactionOrderDetails: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionOrderDetails
+    Left = 1312
+    Top = 160
+  end
+  object SQLQueryOrderDetails: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '訂單編號'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = '訂購日期'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '顧客編號'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = '商品編號'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = '數量'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = '售價'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = '總價'
+        DataType = ftInteger
+        Precision = -1
+      end>
+    Active = True
+    Database = MSSQLConnectionOrderDetails
+    Transaction = SQLTransactionOrderDetails
+    SQL.Strings = (
+      'select * from 訂單明細 order by 訂單編號 DESC'
+      ''
+    )
+    Params = <>
+    Macros = <>
+    Left = 1512
+    Top = 160
+  end
+  object DataSourceOrderDetails: TDataSource
+    DataSet = SQLQueryOrderDetails
+    Left = 1664
+    Top = 160
+  end
+  object MSSQLConnectionDeliveryLookUp: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'BookStore'
+    KeepConnection = False
+    Password = 'erp2012'
+    Transaction = SQLTransactionDeliveryLookUp
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-C5U8POT\SQLEXPRESS'
+    Left = 1144
+    Top = 248
+  end
+  object SQLTransactionDeliveryLookUp: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionDeliveryLookUp
+    Left = 1312
+    Top = 248
+  end
+  object SQLQueryDeliveryLookUp: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '送貨方式'
+        DataType = ftString
+        Precision = -1
+        Size = 5
+      end>
+    Active = True
+    Database = MSSQLConnectionDeliveryLookUp
+    Transaction = SQLTransactionDeliveryLookUp
+    SQL.Strings = (
+      'select DISTINCT 送貨方式 from 訂單管理'
+      ''
+    )
+    Params = <>
+    Macros = <>
+    Left = 1512
+    Top = 248
+  end
+  object DataSourceDeliveryLookUp: TDataSource
+    DataSet = SQLQueryDeliveryLookUp
+    Left = 1664
+    Top = 248
+  end
+  object MSSQLConnectionCustomerLookUp: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'BookStore'
+    KeepConnection = False
+    Password = 'erp2012'
+    Transaction = SQLTransactionCustomerLookUp
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-C5U8POT\SQLEXPRESS'
+    Left = 1144
+    Top = 336
+  end
+  object SQLTransactionCustomerLookUp: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionCustomerLookUp
+    Left = 1312
+    Top = 336
+  end
+  object SQLQueryCustomerLookUp: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '顧客編號'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = '顧客名稱'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = '生日'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '電話'
+        DataType = ftString
+        Precision = -1
+        Size = 10
+      end>
+    Active = True
+    Database = MSSQLConnectionCustomerLookUp
+    Transaction = SQLTransactionCustomerLookUp
+    SQL.Strings = (
+      'select 顧客編號,顧客名稱,生日,電話 from 顧客資料 ORDER BY 顧客編號 ASC'
+      ''
+    )
+    Params = <>
+    Macros = <>
+    Left = 1512
+    Top = 336
+  end
+  object DataSourceCustomerLookUp: TDataSource
+    DataSet = SQLQueryCustomerLookUp
+    Left = 1664
+    Top = 336
+  end
+  object MSSQLConnectionProductLookUp: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'BookStore'
+    KeepConnection = False
+    Password = 'erp2012'
+    Transaction = SQLTransactionProductLookUp
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-C5U8POT\SQLEXPRESS'
+    Left = 1144
+    Top = 432
+  end
+  object SQLTransactionProductLookUp: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionProductLookUp
+    Left = 1312
+    Top = 432
+  end
+  object SQLQueryProductLookUp: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '商品編號'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = '商品名稱'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = '售價'
+        DataType = ftInteger
+        Precision = -1
+      end>
+    Active = True
+    Database = MSSQLConnectionProductLookUp
+    Transaction = SQLTransactionProductLookUp
+    SQL.Strings = (
+      'select 商品編號,商品名稱,售價 from 商品資料 order by 商品編號 ASC'
+      ''
+    )
+    Params = <>
+    Macros = <>
+    Left = 1512
+    Top = 432
+  end
+  object DataSourceProductLookUp: TDataSource
+    DataSet = SQLQueryProductLookUp
+    Left = 1664
+    Top = 432
+  end
+  object MSSQLConnectionProduct2: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'BookStore'
+    KeepConnection = False
+    Password = 'erp2012'
+    Transaction = SQLTransactionProduct2
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-C5U8POT\SQLEXPRESS'
+    Left = 1144
+    Top = 536
+  end
+  object SQLTransactionProduct2: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionProduct2
+    Left = 1312
+    Top = 536
+  end
+  object SQLQueryProduct2: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '商品編號'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = '庫存'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = '售價'
+        DataType = ftInteger
+        Precision = -1
+      end>
+    Active = True
+    Database = MSSQLConnectionProduct2
+    Transaction = SQLTransactionProduct2
+    SQL.Strings = (
+      'select 商品編號,庫存,售價 from 商品資料'
+      ''
+    )
+    Params = <>
+    Macros = <>
+    Left = 1512
+    Top = 536
+  end
+  object DataSourceProduct2: TDataSource
+    DataSet = SQLQueryProduct2
+    Left = 1664
+    Top = 536
+  end
+  object MSSQLConnectionSstatuScript: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'BookStore'
+    KeepConnection = False
+    Password = 'erp2012'
+    Transaction = SQLTransactionSstatuScript
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-C5U8POT\SQLEXPRESS'
+    Left = 1144
+    Top = 632
+  end
+  object SQLTransactionSstatuScript: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionSstatuScript
+    Left = 1312
+    Top = 632
+  end
+  object SQLQuerySstatuScript: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '訂單編號'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = '訂購日期'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '總金額'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = '訂單狀態'
+        DataType = ftString
+        Precision = -1
+        Size = 5
+      end    
+      item
+        Name = '繳費狀態'
+        DataType = ftString
+        Precision = -1
+        Size = 5
+      end    
+      item
+        Name = '送貨方式'
+        DataType = ftString
+        Precision = -1
+        Size = 5
+      end>
+    Active = True
+    Database = MSSQLConnectionSstatuScript
+    Transaction = SQLTransactionSstatuScript
+    SQL.Strings = (
+      'select * from 訂單管理'
+      ''
+    )
+    Params = <>
+    Macros = <>
+    Left = 1512
+    Top = 632
+  end
+  object MSSQLConnectionSstatueLookUp: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'BookStore'
+    KeepConnection = False
+    Password = 'erp2012'
+    Transaction = SQLTransactionSstatueLookUp
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-C5U8POT\SQLEXPRESS'
+    Left = 1144
+    Top = 712
+  end
+  object SQLTransactionSstatueLookUp: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionSstatueLookUp
+    Left = 1312
+    Top = 712
+  end
+  object SQLQuerySstatueLookUp: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '繳費狀態'
+        DataType = ftString
+        Precision = -1
+        Size = 5
+      end>
+    Active = True
+    Database = MSSQLConnectionSstatueLookUp
+    Transaction = SQLTransactionSstatueLookUp
+    SQL.Strings = (
+      'select distinct 繳費狀態 from 訂單管理'
+      ''
+    )
+    Params = <>
+    Macros = <>
+    Left = 1512
+    Top = 712
+  end
+  object DataSourceSstatueLookUp: TDataSource
+    DataSet = SQLQuerySstatueLookUp
+    Left = 1664
+    Top = 712
+  end
+  object MSSQLConnectionDeliveryScript: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'BookStore'
+    KeepConnection = False
+    Password = 'erp2012'
+    Transaction = SQLTransactionDeliveryScript
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-C5U8POT\SQLEXPRESS'
+    Left = 1144
+    Top = 800
+  end
+  object SQLTransactionDeliveryScript: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionDeliveryScript
+    Left = 1312
+    Top = 800
+  end
+  object SQLQueryDeliveryScript: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '訂單編號'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = '訂購日期'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '總金額'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = '訂單狀態'
+        DataType = ftString
+        Precision = -1
+        Size = 5
+      end    
+      item
+        Name = '繳費狀態'
+        DataType = ftString
+        Precision = -1
+        Size = 5
+      end    
+      item
+        Name = '送貨方式'
+        DataType = ftString
+        Precision = -1
+        Size = 5
+      end>
+    Active = True
+    Database = MSSQLConnectionDeliveryScript
+    Transaction = SQLTransactionDeliveryScript
+    SQL.Strings = (
+      'select * from 訂單管理'
+      ''
+    )
+    Params = <>
+    Macros = <>
+    Left = 1512
+    Top = 800
+  end
+  object DataSourceB01: TDataSource
+    DataSet = SQLQueryB01
+    Left = 496
+    Top = 312
+  end
+  object SQLQueryB01: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '顧客編號'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = '顧客名稱'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = '生日'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '電話'
+        DataType = ftString
+        Precision = -1
+        Size = 10
+      end    
+      item
+        Name = '地址'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'Email'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = '密碼'
+        DataType = ftString
+        Precision = -1
+        Size = 15
+      end>
+    Active = True
+    Database = MSSQLConnectionB01
+    Transaction = SQLTransactionB01
+    SQL.Strings = (
+      'select * from 顧客資料'
+      ''
+    )
+    Params = <>
+    Macros = <>
+    Left = 376
+    Top = 312
+  end
+  object MSSQLConnectionB01: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'BookStore'
+    KeepConnection = True
+    Password = 'erp2012'
+    Transaction = SQLTransactionB01
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-C5U8POT\SQLEXPRESS'
+    Left = 104
+    Top = 312
+  end
+  object SQLTransactionB01: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionB01
+    Left = 248
+    Top = 312
+  end
+  object SQLQueryScriptB01: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '顧客編號'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = '顧客名稱'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = '生日'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '電話'
+        DataType = ftString
+        Precision = -1
+        Size = 10
+      end    
+      item
+        Name = '地址'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'Email'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = '密碼'
+        DataType = ftString
+        Precision = -1
+        Size = 15
+      end>
+    Active = True
+    Database = MSSQLConnectionScriptB01
+    Transaction = SQLTransactionScriptB01
+    SQL.Strings = (
+      'select * from 顧客資料'
+      ''
+    )
+    Params = <>
+    Macros = <>
+    Left = 376
+    Top = 376
+  end
+  object MSSQLConnectionScriptB01: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'BookStore'
+    KeepConnection = True
+    Password = 'erp2012'
+    Transaction = SQLTransactionScriptB01
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-C5U8POT\SQLEXPRESS'
+    Left = 104
+    Top = 376
+  end
+  object SQLTransactionScriptB01: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionScriptB01
+    Left = 248
+    Top = 376
+  end
+  object sqlConnector: TSQLConnector
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'BookStore'
+    KeepConnection = False
+    Password = 'erp2012'
+    Transaction = sqlTransaction
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-C5U8POT\SQLEXPRESS'
+    ConnectorType = 'MSSQLServer'
+    Left = 104
+    Top = 224
+  end
+  object sqlTransaction: TSQLTransaction
+    Active = True
+    Database = sqlConnector
+    Left = 248
+    Top = 224
+  end
+  object sqlProcurement: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '採購編號'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '商品名稱'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = '採購日期'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '出版商'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = '數量'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = '單價'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = '應付帳款狀態'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '總價'
+        DataType = ftInteger
+        Precision = -1
+      end>
+    Active = True
+    Database = sqlConnector
+    Transaction = sqlTransaction
+    SQL.Strings = (
+      'select * from 採購商品資料'
+    )
+    Params = <>
+    Macros = <>
+    Left = 376
+    Top = 224
+  end
+  object dataSource: TDataSource
+    DataSet = sqlProcurement
+    Left = 496
+    Top = 224
+  end
+  object sqlQuery: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '使用者編號'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = '使用者名稱'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = '使用者部門'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = '使用者職位'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = '使用者密碼'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end>
+    Active = True
+    Database = sqlConnector
+    Transaction = sqlTransaction
+    SQL.Strings = (
+      'select * from 使用者資料'
+    )
+    Params = <>
+    Macros = <>
+    Left = 376
+    Top = 160
+  end
+  object SQLTransactionUser: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionUser
+    Left = 248
+    Top = 80
+  end
+  object SQLQueryUser: TSQLQuery
+    FieldDefs = <>
+    Database = MSSQLConnectionUser
+    Transaction = SQLTransactionUser
+    SQL.Strings = (
+      'select * from 使用者資料'
+    )
+    Params = <>
+    Macros = <>
+    Left = 376
+    Top = 80
+  end
+  object MSSQLConnectionUser: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'BookStore'
+    KeepConnection = True
+    Password = 'erp2012'
+    Transaction = SQLTransactionUser
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-C5U8POT\SQLEXPRESS'
+    Left = 104
+    Top = 80
+  end
+end

@@ -1,0 +1,134 @@
+object FrmC01: TFrmC01
+  Left = 680
+  Height = 662
+  Top = 319
+  Width = 1160
+  Caption = '商品資料查詢(C01)'
+  ClientHeight = 662
+  ClientWidth = 1160
+  Color = 15197131
+  DesignTimePPI = 120
+  FormStyle = fsMDIChild
+  OnClose = FormClose
+  PopupMode = pmExplicit
+  PopupParent = Frm000.Owner
+  LCLVersion = '2.2.4.0'
+  WindowState = wsMaximized
+  object Button1: TButton
+    Left = 1087
+    Height = 32
+    Top = 113
+    Width = 208
+    Caption = '商品編號查詢'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = Button1Click
+    ParentFont = False
+    TabOrder = 0
+  end
+  object Button2: TButton
+    Left = 1087
+    Height = 32
+    Top = 178
+    Width = 208
+    Caption = '商品名稱查詢'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = Button2Click
+    ParentFont = False
+    TabOrder = 1
+  end
+  object Label1: TLabel
+    Left = 307
+    Height = 23
+    Top = 157
+    Width = 72
+    Caption = '查詢條件'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object Edit1: TEdit
+    Left = 427
+    Height = 31
+    Top = 153
+    Width = 287
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 2
+  end
+  object DBGrid1: TDBGrid
+    Left = 207
+    Height = 453
+    Top = 352
+    Width = 1253
+    Color = clWindow
+    Columns = <    
+      item
+        MinSize = 8
+        MaxSize = 167
+        Title.Caption = '商品編號'
+        FieldName = '商品編號'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 167
+        Title.Caption = '商品名稱'
+        Width = 250
+        FieldName = '商品名稱'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 167
+        Title.Caption = '庫存'
+        Width = 83
+        FieldName = '庫存'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 167
+        Title.Caption = '售價'
+        Width = 83
+        FieldName = '售價'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 167
+        Title.Caption = '出版商'
+        Width = 167
+        FieldName = '出版商'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 167
+        Title.Caption = '作者名稱'
+        Width = 167
+        FieldName = '作者名稱'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 167
+        Title.Caption = '商品敘述'
+        Width = 4167
+        FieldName = '商品敘述'
+      end>
+    DataSource = Frm000.DataSourceC01
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -17
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    ParentFont = False
+    TabOrder = 3
+  end
+end

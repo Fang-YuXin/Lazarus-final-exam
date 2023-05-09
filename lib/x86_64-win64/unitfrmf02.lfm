@@ -1,0 +1,293 @@
+object FrmF02: TFrmF02
+  Left = 381
+  Height = 814
+  Top = 167
+  Width = 1529
+  Caption = '員工資料修改(F02)'
+  ClientHeight = 814
+  ClientWidth = 1529
+  Color = 15197131
+  DesignTimePPI = 120
+  FormStyle = fsMDIChild
+  OnClose = FormClose
+  PopupMode = pmExplicit
+  PopupParent = Frm000.Owner
+  LCLVersion = '2.2.4.0'
+  WindowState = wsMaximized
+  object DBGrid1: TDBGrid
+    Left = 180
+    Height = 393
+    Top = 380
+    Width = 1287
+    Color = clWindow
+    Columns = <    
+      item
+        MinSize = 8
+        MaxSize = 167
+        Title.Caption = '員工編號'
+        FieldName = '員工編號'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 167
+        Title.Caption = '員工名稱'
+        FieldName = '員工名稱'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 167
+        Title.Caption = '生日'
+        FieldName = '生日'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 167
+        Title.Caption = '員工部門'
+        FieldName = '員工部門'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 167
+        Title.Caption = '職位'
+        FieldName = '職位'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 167
+        Title.Caption = '電話'
+        FieldName = '電話'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 167
+        Title.Caption = 'Email'
+        Width = 417
+        FieldName = 'Email'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 167
+        Title.Caption = '就職狀況'
+        Width = 137
+        FieldName = '就職狀況'
+      end>
+    DataSource = Frm000.DataSourceEmployee
+    DefaultRowHeight = 29
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -17
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 0
+    OnCellClick = DBGrid1CellClick
+  end
+  object Label4: TLabel
+    Left = 616
+    Height = 23
+    Top = 80
+    Width = 72
+    Caption = '員工姓名'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object EditName: TEdit
+    Left = 716
+    Height = 31
+    Top = 72
+    Width = 127
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 1
+  end
+  object Label3: TLabel
+    Left = 652
+    Height = 23
+    Top = 135
+    Width = 36
+    Caption = '電話'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 347
+    Height = 23
+    Top = 293
+    Width = 47
+    Caption = 'Email'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object EditPhone: TEdit
+    Left = 716
+    Height = 31
+    Top = 128
+    Width = 127
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 2
+  end
+  object EditEmail: TEdit
+    Left = 426
+    Height = 31
+    Top = 294
+    Width = 388
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 3
+  end
+  object Label7: TLabel
+    Left = 364
+    Height = 23
+    Top = 135
+    Width = 36
+    Caption = '生日'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object DateTimePicker1: TDateTimePicker
+    Left = 427
+    Height = 31
+    Top = 128
+    Width = 125
+    CenturyFrom = 1941
+    MaxDate = 2958465
+    MinDate = -53780
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 4
+    TrailingSeparator = False
+    TextForNullDate = 'NULL'
+    LeadingZeros = True
+    Kind = dtkDate
+    TimeFormat = tf24
+    TimeDisplay = tdHMS
+    DateMode = dmComboBox
+    Date = 44901
+    Time = 0.564297418983188
+    UseDefaultSeparators = True
+    HideDateTimeParts = []
+    MonthNames = 'Long'
+  end
+  object BtnAppend: TButton
+    Left = 936
+    Height = 38
+    Top = 227
+    Width = 94
+    Caption = '新增'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = BtnAppendClick
+    ParentFont = False
+    TabOrder = 5
+  end
+  object BtnUpdate: TButton
+    Left = 936
+    Height = 38
+    Top = 112
+    Width = 94
+    Caption = '修改'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = BtnUpdateClick
+    ParentFont = False
+    TabOrder = 6
+  end
+  object Label10: TLabel
+    Left = 328
+    Height = 23
+    Top = 80
+    Width = 72
+    Caption = '員工編號'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object EditEID: TEdit
+    Left = 427
+    Height = 31
+    Top = 72
+    Width = 127
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 7
+  end
+  object ComboBoxDepart: TComboBox
+    Left = 328
+    Height = 27
+    Top = 216
+    Width = 136
+    ItemHeight = 19
+    Items.Strings = (
+      '業務部'
+      '採購部'
+    )
+    TabOrder = 8
+    TextHint = '部門'
+  end
+  object ComboBoxPosi: TComboBox
+    Left = 504
+    Height = 27
+    Top = 216
+    Width = 136
+    ItemHeight = 19
+    Items.Strings = (
+      '員工'
+      '主管'
+    )
+    TabOrder = 9
+    TextHint = '職位'
+  end
+  object ComboBoxWork: TComboBox
+    Left = 680
+    Height = 27
+    Top = 216
+    Width = 136
+    ItemHeight = 19
+    Items.Strings = (
+      '在職中'
+      '已離職'
+    )
+    TabOrder = 10
+    TextHint = '就職狀況'
+  end
+end

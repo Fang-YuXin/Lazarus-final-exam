@@ -1,0 +1,89 @@
+object FrmB01: TFrmB01
+  Left = 416
+  Height = 688
+  Top = 144
+  Width = 1323
+  Caption = '顧客資料查詢(B01)'
+  ClientHeight = 688
+  ClientWidth = 1323
+  Color = 15197131
+  DesignTimePPI = 120
+  FormStyle = fsMDIChild
+  OnClose = FormClose
+  LCLVersion = '2.2.4.0'
+  WindowState = wsMaximized
+  object Label1: TLabel
+    Left = 155
+    Height = 19
+    Top = 119
+    Width = 96
+    Caption = '編號/姓名查詢'
+    ParentColor = False
+  end
+  object Edit1: TEdit
+    Left = 264
+    Height = 27
+    Top = 111
+    Width = 364
+    TabOrder = 0
+  end
+  object Button1: TButton
+    Left = 308
+    Height = 31
+    Top = 202
+    Width = 94
+    Caption = '編號查詢'
+    OnClick = Button1Click
+    TabOrder = 1
+  end
+  object Button2: TButton
+    Left = 464
+    Height = 31
+    Top = 202
+    Width = 94
+    Caption = '姓名查詢'
+    OnClick = Button2Click
+    TabOrder = 2
+  end
+  object DBGrid1: TDBGrid
+    Left = 712
+    Height = 848
+    Top = 56
+    Width = 1168
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = '顧客編號'
+        FieldName = '顧客編號'
+      end    
+      item
+        Title.Caption = '顧客名稱'
+        FieldName = '顧客名稱'
+      end    
+      item
+        Title.Caption = '生日'
+        FieldName = '生日'
+      end    
+      item
+        Title.Caption = '電話'
+        FieldName = '電話'
+      end    
+      item
+        Title.Caption = '地址'
+        Width = 300
+        FieldName = '地址'
+      end    
+      item
+        Title.Caption = 'Email'
+        Width = 200
+        FieldName = 'Email'
+      end    
+      item
+        Title.Caption = '密碼'
+        FieldName = '密碼'
+      end>
+    DataSource = Frm000.DataSourceB01
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    TabOrder = 3
+  end
+end

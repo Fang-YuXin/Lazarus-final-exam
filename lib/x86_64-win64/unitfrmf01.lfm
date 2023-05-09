@@ -1,0 +1,175 @@
+object FrmF01: TFrmF01
+  Left = 60
+  Height = 579
+  Top = 164
+  Width = 1850
+  ActiveControl = DBGrid1
+  Caption = '員工資料查詢(F01)'
+  ClientHeight = 579
+  ClientWidth = 1850
+  Color = 15197131
+  DesignTimePPI = 120
+  FormStyle = fsMDIChild
+  OnClose = FormClose
+  ParentFont = True
+  PopupMode = pmExplicit
+  PopupParent = Frm000.Owner
+  LCLVersion = '2.2.4.0'
+  WindowState = wsMaximized
+  object DBGrid1: TDBGrid
+    Left = 180
+    Height = 453
+    Top = 340
+    Width = 1292
+    Color = clWindow
+    Columns = <    
+      item
+        MinSize = 8
+        MaxSize = 167
+        Title.Caption = '員工編號'
+        FieldName = '員工編號'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 167
+        Title.Caption = '員工名稱'
+        FieldName = '員工名稱'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 167
+        Title.Caption = '生日'
+        FieldName = '生日'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 167
+        Title.Caption = '員工部門'
+        FieldName = '員工部門'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 167
+        Title.Caption = '職位'
+        FieldName = '職位'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 167
+        Title.Caption = '電話'
+        FieldName = '電話'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 167
+        Title.Caption = 'Email'
+        Width = 417
+        FieldName = 'Email'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 167
+        Title.Caption = '就職狀況'
+        Width = 142
+        FieldName = '就職狀況'
+      end>
+    DataSource = Frm000.DataSourceEmployee
+    DefaultRowHeight = 25
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -17
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 0
+  end
+  object Label1: TLabel
+    Left = 233
+    Height = 23
+    Top = 67
+    Width = 144
+    Caption = '依編號或名稱查詢'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object EditQueryStr: TEdit
+    Left = 400
+    Height = 27
+    Top = 60
+    Width = 252
+    TabOrder = 1
+  end
+  object Btnclear: TButton
+    Left = 1080
+    Height = 38
+    Top = 168
+    Width = 287
+    Caption = '清除查詢'
+    Color = clInfoBk
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = BtnclearClick
+    ParentFont = False
+    TabOrder = 2
+  end
+  object Btnworking: TButton
+    Left = 1080
+    Height = 38
+    Top = 96
+    Width = 287
+    Caption = '查詢'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = BtnworkingClick
+    ParentFont = False
+    TabOrder = 3
+  end
+  object ComboBoxDepart: TComboBox
+    Left = 216
+    Height = 27
+    Top = 168
+    Width = 136
+    ItemHeight = 19
+    Items.Strings = (
+      '業務部'
+      '採購部'
+    )
+    TabOrder = 4
+    TextHint = '依部門查詢'
+  end
+  object ComboBoxPosi: TComboBox
+    Left = 392
+    Height = 27
+    Top = 168
+    Width = 136
+    ItemHeight = 19
+    Items.Strings = (
+      '員工'
+      '主管'
+    )
+    TabOrder = 5
+    TextHint = '依職位查詢'
+  end
+  object ComboBoxWork: TComboBox
+    Left = 568
+    Height = 27
+    Top = 168
+    Width = 136
+    ItemHeight = 19
+    Items.Strings = (
+      '在職中'
+      '已離職'
+    )
+    TabOrder = 6
+    TextHint = '依在職狀況查詢'
+  end
+end

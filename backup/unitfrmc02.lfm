@@ -1,0 +1,311 @@
+object FrmC02: TFrmC02
+  Left = 548
+  Height = 690
+  Top = 122
+  Width = 1753
+  Caption = '商品資料修改(C02)'
+  ClientHeight = 690
+  ClientWidth = 1753
+  Color = 15197131
+  DesignTimePPI = 120
+  FormStyle = fsMDIChild
+  OnClose = FormClose
+  OnCreate = FormCreate
+  LCLVersion = '2.2.4.0'
+  WindowState = wsMaximized
+  object Label1: TLabel
+    Left = 107
+    Height = 23
+    Top = 55
+    Width = 72
+    Caption = '商品編號'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object EditPID: TEdit
+    Left = 196
+    Height = 31
+    Top = 48
+    Width = 250
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 0
+  end
+  object Label2: TLabel
+    Left = 107
+    Height = 23
+    Top = 109
+    Width = 72
+    Caption = '商品名稱'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object EditPName: TEdit
+    Left = 196
+    Height = 31
+    Top = 102
+    Width = 250
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 1
+  end
+  object Label3: TLabel
+    Left = 527
+    Height = 23
+    Top = 55
+    Width = 36
+    Caption = '庫存'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object EditInventory: TEdit
+    Left = 616
+    Height = 31
+    Top = 48
+    Width = 250
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 2
+  end
+  object Label4: TLabel
+    Left = 527
+    Height = 23
+    Top = 108
+    Width = 36
+    Caption = '售價'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object EditSalePrice: TEdit
+    Left = 616
+    Height = 31
+    Top = 102
+    Width = 250
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 3
+  end
+  object Label5: TLabel
+    Left = 107
+    Height = 23
+    Top = 167
+    Width = 54
+    Caption = '出版商'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object EditPublisher: TEdit
+    Left = 196
+    Height = 31
+    Top = 160
+    Width = 250
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 4
+  end
+  object Label6: TLabel
+    Left = 527
+    Height = 23
+    Top = 168
+    Width = 72
+    Caption = '作者名稱'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object EditAuthor: TEdit
+    Left = 616
+    Height = 31
+    Top = 162
+    Width = 250
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 5
+  end
+  object Label7: TLabel
+    Left = 107
+    Height = 23
+    Top = 220
+    Width = 72
+    Caption = '商品敘述'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object EditPWord1: TEdit
+    Left = 912
+    Height = 36
+    Top = 240
+    Width = 670
+    AutoSize = False
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    MaxLength = 46
+    ParentFont = False
+    TabOrder = 6
+  end
+  object ButAppend: TButton
+    Left = 1221
+    Height = 38
+    Top = 48
+    Width = 120
+    Caption = '新增'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = ButAppendClick
+    ParentFont = False
+    TabOrder = 7
+  end
+  object ButDelete: TButton
+    Left = 1220
+    Height = 38
+    Top = 111
+    Width = 120
+    Caption = '刪除'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = ButDeleteClick
+    ParentFont = False
+    TabOrder = 8
+  end
+  object ButUpdate: TButton
+    Left = 1220
+    Height = 34
+    Top = 178
+    Width = 121
+    Caption = '修改'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = ButUpdateClick
+    ParentFont = False
+    TabOrder = 9
+  end
+  object DBGrid1: TDBGrid
+    Left = 160
+    Height = 453
+    Top = 340
+    Width = 1253
+    Color = clWindow
+    Columns = <    
+      item
+        MinSize = 8
+        MaxSize = 167
+        Title.Caption = '商品編號'
+        FieldName = '商品編號'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 167
+        Title.Caption = '商品名稱'
+        Width = 250
+        FieldName = '商品名稱'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 167
+        Title.Caption = '庫存'
+        Width = 83
+        FieldName = '庫存'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 167
+        Title.Caption = '售價'
+        Width = 83
+        FieldName = '售價'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 167
+        Title.Caption = '出版商'
+        Width = 167
+        FieldName = '出版商'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 167
+        Title.Caption = '作者名稱'
+        Width = 167
+        FieldName = '作者名稱'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 167
+        Title.Caption = '商品敘述'
+        Width = 4167
+        FieldName = '商品敘述'
+      end>
+    DataSource = Frm000.DataSourceC01
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -17
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    ParentFont = False
+    TabOrder = 10
+    OnCellClick = DBGrid1CellClick
+  end
+  object EditPWord: TMemo
+    Left = 192
+    Height = 132
+    Top = 224
+    Width = 674
+    Lines.Strings = (
+      'EditPWord'
+    )
+    ScrollBars = ssAutoBoth
+    TabOrder = 11
+  end
+end
